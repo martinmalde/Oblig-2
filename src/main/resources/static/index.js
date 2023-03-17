@@ -10,11 +10,11 @@ function registrer(){
     };
     let feil = 0;
 
-    if($('#film').val() === "" || $('#film').val() === 0 || $("#film").val() === "Default"){
-        document.getElementById("antall.feil").style.display = "inline";
+    if($('#film option:selected').val() === ""){
+        document.getElementById("film.feil").style.display = "inline";
         feil++;
     } else {
-        document.getElementById("antall.feil").style.display = "none";
+        document.getElementById("film.feil").style.display = "none";
     }
     if($('#antall').val() === "" || $('#antall').val() === 0){
         document.getElementById("antall.feil").style.display = "inline";
