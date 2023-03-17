@@ -17,3 +17,6 @@ i en tabell. Man har mulighet til å lagre flere ordre, og bruke slett-knappen t
 Alle feltene må skrives inn i for å kunne brukes, ellers vil du få opp en feilmelding som sier hvilke felter som må skrives i og ordren
 vil heller ikke skrives ut i tabellen.
 
+Den nye applikasjonen har samme funksjonalitet som sist. Det nye er at den lagrer på tjener, lokalt på maskinen. Applikasjonen er også
+stylet ved bruk av Bootstrap-biblioteket. Det er knapper og tabeller som er stylet, også noe på selve skjemaet.
+
