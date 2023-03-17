@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Kinobilletter</title>
+
+    <!-- helt enkel css for å få brukersnittet som ønsket og rødfarge på feilmeldingene -->
+   <style>
+
+        .feilmelding {
+            color: red;
+        }
+
+    </style>
+    <!-- importerer Bootstrap-biblioteket -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- importerer jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- importerer index.js filen -->
+    <script src="index.js" type="application/javascript"></script>
+</head>
+<body>
+<!-- har skjemaet i en tabell med inputfelter til innskrivningen og select for å velge film -->
+<div class="container">
+
+    <h1>Bestilling av kinobilletter</h1>
+
+        <tr class = "film"><td><label>Velg film</label></td><td>
+            <select id="film" >
+                <!-- første option er en disabled og selectet option som da ikke vil kunne velges og returerer en tom verdi -->
+                <option value="" class="valg" disabled selected>Velg en film</option>
+
+                <option>Avatar: The Way of water</option>
+                <option>Ant-Man and the Wasp: Quantumania</option>
+                <option>Storm</option>
+            </select><label class="feilmelding" id="film.feil" style="display: none">Du må velge en film!</label>
+        </td></tr>
+
+    <tr><td>Antall</td><td><input type="number" id="antall" class="form-control"/><label class="feilmelding" id="antall.feil" style="display: none">Du må velge et antall</label></td></tr>
+    <tr><td>Fornavn</td><td><input type="text" id="fornavn"class="form-control"/><label class="feilmelding" id="fornavn.feil" style="display: none">Du må skrive inn et fornavn</label></td></tr>
+    <tr><td>Etternavn</td><td><input type="text" id="etternavn" class="form-control"/><label class="feilmelding" id="etternavn.feil" style="display: none">Du må skrive inn et etternavn</label></td></tr>
+    <tr><td>Telefonnr</td><td><input type="number" id="telefonnr" class="form-control"/><label class="feilmelding" id="telefonnr.feil" style="display: none">Du må skrive inn et telefonnr</label></td></tr>
+    <tr><td>Epost</td><td><input type="email" id="epost" class="form-control"/><label class="feilmelding" id="epost.feil" style="display: none">Du må skrive inn en epost-adresse</label></td></tr>
+
+
+<!-- knappen som kjører funksjonen register som da registrer og viser kjøpte billetter (kjører også visBillettRegister()) -->
+<tr><td><button onclick="registrer()" class="btn btn-success">Registrer billett</button></td></tr>
+</div>
+<div class="container">
+<!-- div-en som da viser de registrerte billettene fra registeret -->
+<h2>Alle billetter</h2>
+<div id="billettRegister"></div>
+
+<!-- knappen som kjører funksjonen slettBillettene som da tømmer arrayet og deretter kjører visBillettRegister() for å oppdatere registeret til å vise et tomt register -->
+<button onclick="slettBillettene()" class="btn btn-danger">Slett billettene</button>
+</div>
+</body>
+</html>
