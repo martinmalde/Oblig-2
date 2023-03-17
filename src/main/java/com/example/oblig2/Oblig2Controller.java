@@ -14,6 +14,7 @@ public class Oblig2Controller {
 
     @PostMapping("/lagre")
     public void lagreBillett(Billetter innBillett) {
+        System.out.println("Dataen er lagret");
         alleBilletter.add(innBillett);
     }
 
@@ -23,7 +24,9 @@ public class Oblig2Controller {
     }
 
     @GetMapping("/slettBillettene")
-    public void slettBillettene(){ alleBilletter.clear(); }
+    public void slettBillettene() {
+        System.out.println("Dataen er slettet");
+        alleBilletter.clear(); }
 
 
 
